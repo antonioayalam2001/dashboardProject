@@ -2,7 +2,7 @@
 import {createContext, useMemo, useState} from "react";
 import {createTheme} from "@mui/material";
 
-const tokens = (mode) => ({
+export const tokens = (mode) => ({
     ...(mode === 'dark'
             ? {
                 grey: {
@@ -82,7 +82,7 @@ const tokens = (mode) => ({
                     600: "#747474",
                     500: "#676767",
                     400: "#5a5a5a",
-                    300: "#4d4d4d",
+                    300: "#cbcbcb",
                     200: "#414141",
                     100: "#343434",
                 },
