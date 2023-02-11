@@ -3,14 +3,16 @@ import {CssBaseline, ThemeProvider} from "@mui/material";
 import {TopBar} from "./pages/globals/TopBar.jsx";
 import {Route, Routes} from "react-router-dom";
 import {Dashboard} from "./pages/dashboard/Dashboard.jsx";
+import {Sidebar} from "./pages/globals/Sidebar.jsx";
 
 function App() {
-    const [theme,colorMode] = useMode();
+    const [theme, colorMode] = useMode();
     return (
-        <ColorModeContext.Provider value = {colorMode} >
+        <ColorModeContext.Provider value={colorMode}>
             <ThemeProvider theme={theme}>
                 <CssBaseline>
                     <div className="app">
+                        <Sidebar/>
                         <main className="content">
                             {/*TOBPAR will always be visible in all the elements of our app*/}
                             <TopBar/>

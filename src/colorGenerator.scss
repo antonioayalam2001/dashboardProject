@@ -1,29 +1,29 @@
-$color-black: #272727;
-$color-blue: #8EACD0;
-$color-pink: #FFB8C7;
-$color-lightpink: #F9C6D1;
-
-
-$colors: (
-        "color-black" #272727,
-        "color-blue" #8EACD0,
-        "color-pink" #FFB8C7,
-        "color-lightpink" #F9C6D1
-);
-
-
-@each $key, $val in $colors {
-  @if($key == color-black){
-    @for $i from 1 through 10 {
-      .color#{$i * 100}-color {
-        color: lighten($val, $i*5%);
-      }
-    }
-}@else{
-  @for $i from 1 through 10 {
-    .color#{$i * 100}-color {
-      color: darken($val, $i*5%);
-    }
-  }
-}
-}
+//$color-black: #272727;
+//$color-blue: #8EACD0;
+//$color-pink: #FFB8C7;
+//$color-lightpink: #F9C6D1;
+//
+//
+//$colors: (
+//        "color-black" #272727,
+//        "color-blue" #8EACD0,
+//        "color-pink" #FFB8C7,
+//        "color-lightpink" #F9C6D1
+//);
+//
+//
+//@each $key, $val in $colors {
+//  @if($key == color-black){
+//    @for $i from 1 through 10 {
+//      .color#{$i * 100}-color {
+//        color: lighten($val, $i*5%);
+//      }
+//    }
+//}@else{
+//  @for $i from 1 through 10 {
+//    .color#{$i * 100}-color {
+//      color: darken($val, $i*5%);
+//    }
+//  }
+//}
+//}
