@@ -6,25 +6,14 @@ import {useState} from "react";
 // IMAGES
 import userImage from '../../assets/user_img.jpeg';
 // ICONS
-import SearchIcon from "@mui/icons-material/Search";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import {NavBarOption} from "../../components/NavBarOption.jsx";
+import {navBarLinks} from "../../helpers/constants.js";
+import {getColors} from "../../helpers/getColors.js";
 
 export const Sidebar = () => {
-    // Returns an object with all the Theme properties from material UI
-    const {palette: {mode}} = useTheme();
-    // Getting our personal palette as we defined before
-    const colors = tokens(mode);
+    const colors = getColors();
     // console.log(colors)
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
@@ -47,7 +36,7 @@ export const Sidebar = () => {
                 color: ` ${colors.lightPinkAccent[300]} !important`
             },
         }}>
-            <ProSidebar collapsed={isCollapsed} width={"300px"} collapsedWidth={'50px'}>
+            <ProSidebar collapsed={isCollapsed} width={"300px"} collapsedWidth={'60px'}>
                 <Menu iconShape="square">
                     {/* LOGO AND MENU ICON */}
                     <MenuItem
@@ -100,9 +89,14 @@ export const Sidebar = () => {
                     )
                     }
 
-                {/*    Menu Items*/}
+                    {/*    Menu Items*/}
                     <Box pl={isCollapsed ? undefined : "10%"}>
-
+                        {
+                            navBarLinks.map(({title, to, icon}, index) => (
+                                    <NavBarOption key={title} title={title} to={to} selected={selected} setSelected={setSelected} icon={icon} index={index} isCollapsed={isCollapsed}/>
+                                )
+                            )
+                        }
                     </Box>
 
                 </Menu>

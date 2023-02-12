@@ -4,6 +4,7 @@ import {TopBar} from "./pages/globals/TopBar.jsx";
 import {Route, Routes} from "react-router-dom";
 import {Dashboard} from "./pages/dashboard/Dashboard.jsx";
 import {Sidebar} from "./pages/globals/Sidebar.jsx";
+import {Team} from "./pages/Team/Team.jsx";
 
 function App() {
     const [theme, colorMode] = useMode();
@@ -18,7 +19,7 @@ function App() {
                             <TopBar/>
                             <Routes>
                                 <Route path={'/'} element={<Dashboard/>}/>
-                                <Route path={'/team'} element={<Dashboard/>}/>
+                                <Route path={'/team'} element={<Team/>}/>
                                 <Route path={'/contacts'} element={<Dashboard/>}/>
                                 <Route path={'/form'} element={<Dashboard/>}/>
                                 <Route path={'/invoices'} element={<Dashboard/>}/>
