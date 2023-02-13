@@ -1,21 +1,9 @@
 import {getColors} from "../../helpers/getColors.js";
-import {Box, Typography} from "@mui/material";
-import AdminPanelSettingsOutlined from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlined from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlined from "@mui/icons-material/SecurityOutlined";
+import {Box} from "@mui/material";
 import {Header} from "../../components/Header.jsx";
-import {DataGrid, GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport, GridToolbarFilterButton} from "@mui/x-data-grid";
+import {DataGrid} from "@mui/x-data-grid";
 import {mockDataContacts} from "../../data/mockData.js";
-
-function CustomToolbar() {
-    return (
-        <GridToolbarContainer>
-            <GridToolbarExport color={"secondary"}/>
-            <GridToolbarFilterButton/>
-            <GridToolbarDensitySelector/>
-        </GridToolbarContainer>
-    );
-}
+import {CustomToolbarMUI} from "../../components/CustomToolbarMUI.jsx";
 
 export const Contacts = () => {
     const colors = getColors();
@@ -31,14 +19,14 @@ export const Contacts = () => {
         {field: "zipCode", headerName: "ZIP", flex: 0},
     ]
     return (
-        <Box p={'1rem'} m={'20px'}>Team view
+        <Box p={'1rem'} m={'20px'}>
             <Header title={'Contacts'} subtitle={'Contacts List'}/>
             <Box m={'40px 0 0 0'} height={'65vh'} sx={{
                 '& .MuiDataGrid-root': {border: 'none'},
                 '& .MuiDataGrid-footerContainer': {backgroundColor: colors.blueAccent[200], textAlign: 'center'},
                 '& .MuiDataGrid-toolbarContainer .MuiButton-text': {color: 'white', textAlign: 'center', padding: '1rem'},
             }}>
-                <DataGrid columns={columns} rows={mockDataContacts} components={{Toolbar: CustomToolbar}} sx={{
+                <DataGrid columns={columns} rows={mockDataContacts} components={{Toolbar: CustomToolbarMUI}} sx={{
                     width: 'auto',
                     margin: '0 auto',
                     '@media print': {
