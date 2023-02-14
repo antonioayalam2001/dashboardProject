@@ -7,6 +7,9 @@ import {Sidebar} from "./pages/globals/Sidebar.jsx";
 import {Team} from "./pages/Team/Team.jsx";
 import {Contacts} from "./pages/contacts/Contacts.jsx";
 import {Invoices} from "./pages/invoices/Invoices.jsx";
+import {Form} from "./pages/form/Form.jsx";
+import {Calendar} from "./pages/calendar/Calendar.jsx";
+import {FAQ} from "./pages/faq/FAQ.jsx";
 
 function App() {
     const [theme, colorMode] = useMode();
@@ -23,13 +26,14 @@ function App() {
                                 <Route path={'/'} element={<Dashboard/>}/>
                                 <Route path={'/team'} element={<Team/>}/>
                                 <Route path={'/contacts'} element={<Contacts/>}/>
-                                <Route path={'/form'} element={<Dashboard/>}/>
+                                <Route path={'/form'} element={<Form/>}/>
                                 <Route path={'/invoices'} element={<Invoices/>}/>
+                                <Route path={'/calendar'} element={<Calendar/>}/>
+                                <Route path={'/faq'} element={<FAQ/>}/>
                                 <Route path={'/bar'} element={<Dashboard/>}/>
                                 <Route path={'/pie'} element={<Dashboard/>}/>
                                 <Route path={'/line'} element={<Dashboard/>}/>
                                 <Route path={'/geography'} element={<Dashboard/>}/>
-                                <Route path={'/calendar'} element={<Dashboard/>}/>
                             </Routes>
                         </main>
                     </div>

@@ -1,41 +1,56 @@
 import {Menu, MenuItem, ProSidebar} from "react-pro-sidebar";
 import 'react-pro-sidebar/dist/css/styles.css'
-import {Box, IconButton, Typography, useTheme} from "@mui/material";
-import {tokens} from "../../theme.js";
-import {useState} from "react";
+import {Box, IconButton, Typography} from "@mui/material";
+import {useEffect, useState} from "react";
 // IMAGES
 import userImage from '../../assets/user_img.jpeg';
 // ICONS
 
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import {NavBarOption} from "../../components/NavBarOption.jsx";
-import {navBarLinks} from "../../helpers/constants.js";
-import {getColors} from "../../helpers/getColors.js";
+import {navBarLinks, getColors} from "../../helpers/index.js";
 
 export const Sidebar = () => {
     const colors = getColors();
     // console.log(colors)
+    const [widthResponsive, setWidthResponsive] = useState(0);
+
+    useEffect(() => {
+        const handleWidthPosition = ({target}) => {
+            const {window: {innerWidth}} = target;
+            setWidthResponsive(innerWidth);
+            innerWidth <= 900 ? setIsCollapsed(true) : setIsCollapsed(false)
+        }
+        window.addEventListener('resize', handleWidthPosition)
+        return () => {
+            console.log('clean')
+            window.removeEventListener('resize', handleWidthPosition);
+        }
+    }, [widthResponsive]);
+
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
     return (
-        <Box sx={{
-            "& .pro-sidebar-inner": {
-                background: ` ${colors.blueAccent[800]} !important`
-            },
-            "& .pro-icon-wrapper": {
-                background: ` transparent !important`
-            },
-            "& .pro-inner-item": {
-                padding: ` 0.2rem 2rem 0.2rem 1.2rem !important`
-            },
-            "& .pro-inner-item:hover": {
-                color: ` ${colors.primary[900]} !important`,
-                // background: ` ${colors.pinkAccent[700]} !important`
-            },
-            "& .pro-menu-item.active": {
-                color: ` ${colors.lightPinkAccent[300]} !important`
-            },
-        }}>
+        <Box
+            sx={{
+                "& .pro-sidebar-inner": {
+                    background: ` ${colors.blueAccent[800]} !important`
+                },
+                "& .pro-icon-wrapper": {
+                    background: ` transparent !important`
+                },
+                "& .pro-inner-item": {
+                    padding: ` 0.2rem 2rem 0.2rem 1.2rem !important`
+                },
+                "& .pro-inner-item:hover": {
+                    color: ` ${colors.primary[900]} !important`,
+                    // background: ` ${colors.pinkAccent[700]} !important`
+                },
+                "& .pro-menu-item.active": {
+                    color: ` ${colors.lightPinkAccent[300]} !important`
+                },
+                // display:'none'
+            }}>
             <ProSidebar collapsed={isCollapsed} width={"300px"} collapsedWidth={'60px'}>
                 <Menu iconShape="square">
                     {/* LOGO AND MENU ICON */}
