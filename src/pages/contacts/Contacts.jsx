@@ -23,7 +23,7 @@ export const Contacts = () => {
             <Header title={'Contacts'} subtitle={'Contacts List'}/>
             <Box m={'40px 0 0 0'} height={'65vh'} sx={{
                 '& .MuiDataGrid-root': {border: 'none'},
-                '& .MuiDataGrid-footerContainer': {backgroundColor: colors.blueAccent[200], textAlign: 'center'},
+                '& .MuiDataGrid-footerContainer': {backgroundColor: colors.secondary[200], textAlign: 'center'},
                 '& .MuiDataGrid-toolbarContainer .MuiButton-text': {color: 'white', textAlign: 'center', padding: '1rem'},
             }}>
                 <DataGrid columns={columns} rows={mockDataContacts} components={{Toolbar: CustomToolbarMUI}} sx={{
@@ -37,7 +37,7 @@ export const Contacts = () => {
                         '& .MuiDataGrid-cell': {minWidth: '100px !important', },
                         '& .MuiDataGrid-columnHeader': {minWidth: '100px !important',maxWidth: '100px !important'},
                     },
-                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.blueAccent[200], textAlign: 'center'},
+                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.secondary[200], textAlign: 'center'},
                     '& .MuiDataGrid-columnHeaderTitleContainer': {
                         justifyContent: 'center',
                     },

@@ -9,32 +9,19 @@ import userImage from '../../assets/user_img.jpeg';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import {NavBarOption} from "../../components/NavBarOption.jsx";
 import {navBarLinks, getColors} from "../../helpers/index.js";
+import {useWindowWidth} from "../../hooks/useWindowWidth.js";
 
 export const Sidebar = () => {
     const colors = getColors();
+    const theme = getColors('theme');
     // console.log(colors)
-    const [widthResponsive, setWidthResponsive] = useState(0);
-
-    useEffect(() => {
-        const handleWidthPosition = ({target}) => {
-            const {window: {innerWidth}} = target;
-            setWidthResponsive(innerWidth);
-            innerWidth <= 900 ? setIsCollapsed(true) : setIsCollapsed(false)
-        }
-        window.addEventListener('resize', handleWidthPosition)
-        return () => {
-            console.log('clean')
-            window.removeEventListener('resize', handleWidthPosition);
-        }
-    }, [widthResponsive]);
-
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    const {isCollapsed, handleCollapsed} = useWindowWidth();
     const [selected, setSelected] = useState("Dashboard");
     return (
         <Box
             sx={{
                 "& .pro-sidebar-inner": {
-                    background: ` ${colors.blueAccent[800]} !important`
+                    background: ` ${colors.secondary[900]} !important`
                 },
                 "& .pro-icon-wrapper": {
                     background: ` transparent !important`
@@ -47,7 +34,7 @@ export const Sidebar = () => {
                     // background: ` ${colors.pinkAccent[700]} !important`
                 },
                 "& .pro-menu-item.active": {
-                    color: ` ${colors.lightPinkAccent[300]} !important`
+                    color: ` ${colors.white[300]} !important`
                 },
                 // display:'none'
             }}>
@@ -55,11 +42,11 @@ export const Sidebar = () => {
                 <Menu iconShape="square">
                     {/* LOGO AND MENU ICON */}
                     <MenuItem
-                        onClick={() => setIsCollapsed(!isCollapsed)}
+                        onClick={() => handleCollapsed()}
                         icon={isCollapsed ? <MenuOutlinedIcon/> : undefined}
                         style={{
                             margin: "10px 0 20px 0",
-                            color: colors.grey[100],
+                            color: colors.black[100],
                         }}
                     >
                         {!isCollapsed && (
@@ -68,9 +55,9 @@ export const Sidebar = () => {
                                  justifyContent={'space-between'}
                                  alignItems={'center'}
                             >
-                                <Typography variant={'h4'} color={colors.grey[100]} fontWeight={'bolder'}>Personal Dashboard</Typography>
+                                <Typography variant={'h4'} color={theme === 'dark' ? colors.black[100] : colors.black[700]} fontWeight={'bolder'}>Personal Dashboard</Typography>
                                 <IconButton onClick={() => {
-                                    setIsCollapsed(!isCollapsed)
+                                    handleCollapsed()
                                 }}> <MenuOutlinedIcon/></IconButton>
                             </Box>
                         )}
@@ -95,7 +82,7 @@ export const Sidebar = () => {
                             <Box textAlign={'center'}>
 
                                 {/*    USER INFO*/}
-                                <Typography variant={'h3'} mt={'1rem'} fontWeight={'bold'}>Antonio Ayala</Typography>
+                                <Typography color={colors.primary[500]} variant={'h3'} mt={'1rem'} fontWeight={'bold'}>Antonio Ayala</Typography>
                                 <Typography>Welcome</Typography>
 
                             </Box>

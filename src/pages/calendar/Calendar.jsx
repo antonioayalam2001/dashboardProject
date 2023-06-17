@@ -47,10 +47,10 @@ export const Calendar = () => {
             <Box display={'flex'}>
 
                 {/*    Calendar left side*/}
-                <Box flex={'1 1 20%'} bgcolor={colors.blueAccent[700]} borderRadius={'4px'} p={'15px'}>
+                <Box flex={'1 1 20%'} bgcolor={colors.secondary[700]} borderRadius={'4px'} p={'15px'}>
                     <Typography variant={'h5'}>Events</Typography>
                     {currentEvents?.map((event) => (
-                        <ListItem key={event.id} sx={{backgroundColor: colors.blueAccent[100], margin: '10px 0', borderRadius: '2px'}}>
+                        <ListItem key={event.id} sx={{backgroundColor: colors.secondary[100], margin: '10px 0', borderRadius: '2px'}}>
                             <ListItemText primary={event.title} secondary={
                                 <Typography>{formatDate(event.start, {year: 'numeric', month: 'short', day: 'numeric'})}</Typography>
                             }/>

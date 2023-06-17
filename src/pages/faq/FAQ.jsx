@@ -15,7 +15,7 @@ export const FAQ = () => {
             <Header title={'FAQ'} subtitle={"Frequently asked questions"}/>
             <Accordion defaultExpanded={false}>
                 <AccordionSummary expandIcon={<ExpandMore/>}>
-                    <Typography color={colors.lightPinkAccent[600]} variant={'h5'}>
+                    <Typography color={colors.white[600]} variant={'h5'}>
                         Question : 1
                     </Typography>
                 </AccordionSummary>

@@ -19,8 +19,9 @@ export const TopBar = () => {
             {/*SERACHBAR*/}
             <Box
                 display={'flex'}
-                bgcolor={colors.primary[300]}
+                border={ `2px solid  ${colors.primary[100]}`}
                 borderRadius={'0.3rem'}
+                p={'0.2rem'}
                 flex={1}
             >
 

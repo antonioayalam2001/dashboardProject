@@ -16,7 +16,7 @@ export const Invoices = () => {
 
             renderCell: (params) => {
                 const value = params.row.cost;
-                const colorStyle = value>50 ? colors.pinkAccent[700] : colors.blueAccent[200]
+                const colorStyle = value>50 ? colors.pinkAccent[700] : colors.secondary[200]
                 return <Typography fontWeight={'bold'} color = {colorStyle}>{value}</Typography>
             }
         },
@@ -29,7 +29,7 @@ export const Invoices = () => {
             <Header title={'TEAM BOARD'} subtitle={'Manage the whole team in just one place'}/>
             <Box m={'40px 0 0 0'} height={'65vh'} sx={{
                 '& .MuiDataGrid-root': {border: 'none'},
-                '& .MuiDataGrid-footerContainer': {backgroundColor: colors.blueAccent[200], textAlign: 'center'},
+                '& .MuiDataGrid-footerContainer': {backgroundColor: colors.secondary[200], textAlign: 'center'},
                 '& .MuiDataGrid-toolbarContainer .MuiButton-text': {color: 'white', textAlign: 'center', padding: '1rem'},
                 '& .MuiCheckBox-root': {color: 'white', textAlign: 'center', padding: '1rem'},
 
@@ -39,9 +39,9 @@ export const Invoices = () => {
                         '.MuiDataGrid-main': {
                             color: 'rgba(49,49,49,0.87)',
                         },
-                        '& .MuiDataGrid-columnHeader': {color: colors.lightPinkAccent[200], textAlign: 'center', fontWeight: 'bolder'}
+                        '& .MuiDataGrid-columnHeader': {color: colors.white[200], textAlign: 'center', fontWeight: 'bolder'}
                     },
-                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.blueAccent[200], textAlign: 'center'},
+                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.secondary[200], textAlign: 'center'},
                     '& .MuiDataGrid-columnHeaderTitleContainer': {
                         justifyContent: 'center',
                         '& .MuiDataGrid-columnHeaderTitle': {textAlign: 'center', fontWeight: 'bold', fontSize: '0.8rem'}

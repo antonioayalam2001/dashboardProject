@@ -5,7 +5,66 @@ import {createTheme} from "@mui/material";
 export const tokens = (mode) => ({
     ...(mode === 'dark'
             ? {
-                grey: {
+                black: {
+                    100: "#d2d2d2",
+                    200: "#a4a4a4",
+                    300: "#777777",
+                    400: "#494949",
+                    500: "#1c1c1c",
+                    600: "#161616",
+                    700: "#111111",
+                    800: "#0b0b0b",
+                    900: "#060606"
+                },
+                primary: {
+                    100: "#fecdf5",
+                    200: "#fc9beb",
+                    300: "#fb6ae0",
+                    400: "#f938d6",
+                    500: "#f806cc",
+                    600: "#c605a3",
+                    700: "#95047a",
+                    800: "#630252",
+                    900: "#320129"
+                },
+                secondary: {
+                    100: "#eecfe4",
+                    200: "#dd9fc9",
+                    300: "#cb70af",
+                    400: "#ba4094",
+                    500: "#a91079",
+                    600: "#870d61",
+                    700: "#650a49",
+                    800: "#440630",
+                    900: "#220318"
+                },
+
+                pinkAccent: {
+                    100: "#edf4f4",
+                    200: "#dbe9ea",
+                    300: "#c9dfdf",
+                    400: "#b7d4d5",
+                    500: "#a5c9ca",
+                    600: "#84a1a2",
+                    700: "#637979",
+                    800: "#425051",
+                    900: "#212828"
+                },
+
+                white: {
+                    100: "#fcfcfc",
+                    200: "#f9f9f9",
+                    300: "#f5f5f5",
+                    400: "#f2f2f2",
+                    500: "#efefef",
+                    600: "#bfbfbf",
+                    700: "#8f8f8f",
+                    800: "#606060",
+                    900: "#303030"
+                },
+            } :
+            {
+                black: {
                     100: "#e0e0e0",
                     200: "#c2c2c2",
                     300: "#a3a3a3",
@@ -17,109 +76,50 @@ export const tokens = (mode) => ({
                     900: "#141414",
                 },
                 primary: {
-                    100: "#343434",
-                    200: "#414141",
-                    300: "#4d4d4d",
-                    400: "#5a5a5a",
-                    500: "#676767",
-                    600: "#747474",
-                    700: "#747470",
-                    800: "#8d8d8d",
-                    900: "#e0e0e0",
+                    100: "#fdf4fb",
+                    200: "#fbe8f7",
+                    300: "#faddf2",
+                    400: "#f8d1ee",
+                    500: "#f6c6ea",
+                    600: "#c59ebb",
+                    700: "#94778c",
+                    800: "#624f5e",
+                    900: "#31282f"
                 },
-                blueAccent: {
-                    100: "#7c9fc9",
-                    200: "#6a92c1",
-                    300: "#5884ba",
-                    400: "#4977af",
-                    500: "#416b9d",
-                    600: "#3a5f8b",
-                    700: "#325379",
-                    800: "#2b4667",
-                    900: "#233a55",
-                },
-
-                pinkAccent: {
-                    100: "#ff9fb3",
-                    200: "#ff859f",
-                    300: "#ff6c8b",
-                    400: "#ff5277",
-                    500: "#ff3962",
-                    600: "#ff1f4e",
-                    700: "#ff063a",
-                    800: "#eb0032",
-                    900: "#d2002c",
-                },
-
-                lightPinkAccent: {
-                    100: "#f7afbe",
-                    200: "#f498ac",
-                    300: "#f28199",
-                    400: "#ef6a87",
-                    500: "#ed5374",
-                    600: "#ea3c61",
-                    700: "#e8254f",
-                    800: "#dc1742",
-                    900: "#c5153b",
-                },
-            } :
-            {
-                grey: {
-                    100: "#141414",
-                    200: "#292929",
-                    300: "#3d3d3d",
-                    400: "#525252",
-                    500: "#666666",
-                    600: "#858585",
-                    700: "#a3a3a3",
-                    800: "#c2c2c2",
-                    900: "#e0e0e0",
-                },
-                primary: {
-                    900: "#9a9a9a",
-                    800: "#8d8d8d",
-                    700: "#747470",
-                    600: "#747474",
-                    500: "#676767",
-                    400: "#5a5a5a",
-                    300: "#cbcbcb",
-                    200: "#414141",
-                    100: "#343434",
-                },
-                blueAccent: {
-                    900: "#233a55",
-                    800: "#2b4667",
-                    700: "#325379",
-                    600: "#3a5f8b",
-                    500: "#416b9d",
-                    400: "#4977af",
-                    300: "#5884ba",
-                    200: "#6a92c1",
-                    100: "#7c9fc9",
+                secondary: {
+                    100: "#282c2e",
+                    200: "#4f585b",
+                    300: "#778489",
+                    400: "#9eb0b6",
+                    500: "#c6dce4",
+                    600: "#d1e3e9",
+                    700: "#ddeaef",
+                    800: "#e8f1f4",
+                    900: "#f4f8fa",
                 },
 
                 pinkAccent: {
-                    900: "#d2002c",
-                    800: "#eb0032",
-                    700: "#ff063a",
-                    600: "#ff1f4e",
-                    500: "#ff3962",
-                    400: "#ff5277",
-                    300: "#ff6c8b",
-                    200: "#ff859f",
-                    100: "#ff9fb3",
+                    100: "#fcf6f6",
+                    200: "#faeded",
+                    300: "#f7e3e3",
+                    400: "#f5dada",
+                    500: "#f2d1d1",
+                    600: "#c2a7a7",
+                    700: "#917d7d",
+                    800: "#615454",
+                    900: "#302a2a"
                 },
 
-                lightPinkAccent: {
-                    900: "#c5153b",
-                    800: "#dc1742",
-                    700: "#e8254f",
-                    600: "#ea3c61",
-                    500: "#ed5374",
-                    400: "#ef6a87",
-                    300: "#f28199",
-                    200: "#f498ac",
-                    100: "#f7afbe",
+                white: {
+                    100: "#fcfcfc",
+                    200: "#f9f9f9",
+                    300: "#f5f5f5",
+                    400: "#f2f2f2",
+                    500: "#efefef",
+                    600: "#bfbfbf",
+                    700: "#8f8f8f",
+                    800: "#606060",
+                    900: "#303030"
                 }
             }
     )
@@ -134,22 +134,22 @@ export const themeSettings = (mode) => {
             ...(mode === 'dark'
                     ? {
                         primary: {main: colors.primary[500]},
-                        secondary: {main: colors.blueAccent[500]},
+                        secondary: {main: colors.secondary[500]},
                         neutral: {
-                            dark: colors.grey[700],
-                            main: colors.grey[500],
-                            light: colors.grey[100],
+                            dark: colors.black[700],
+                            main: colors.black[500],
+                            light: colors.black[100],
                         },
                         background: {
-                            default: colors.blueAccent[800]
+                            default: colors.secondary[800]
                         }
                     } : {
                         primary: {main: colors.primary[100]},
-                        secondary: {main: colors.blueAccent[500]},
+                        secondary: {main: colors.secondary[500]},
                         neutral: {
-                            dark: colors.grey[700],
-                            main: colors.grey[500],
-                            light: colors.grey[100],
+                            dark: colors.black[700],
+                            main: colors.black[500],
+                            light: colors.black[100],
                         },
                         background: {
                             default: "rgba(250,210,225,0.8)"

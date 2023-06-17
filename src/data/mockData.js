@@ -487,7 +487,7 @@ export const mockDataInvoices = [
 //     },
 //     {
 //         id: "france",
-//         color: tokens("dark").blueAccent[300],
+//         color: tokens("dark").secondary[300],
 //         data: [
 //             {
 //                 x: "plane",
