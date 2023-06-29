@@ -16,8 +16,9 @@ import { useWindowWidth } from "../../hooks/useWindowWidth.js";
 
 export const Dashboard = () => {
     const colors = getColors();
-    const { widthResponsive } = useWindowWidth();
+    const { widthResponsive } = useWindowWidth(800);
     const isMobile = widthResponsive < 600;
+    console.log('isMobile', isMobile);
     return (
         <Box m={'1rem'} paddingRight={"1rem"}>
             <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
@@ -116,7 +117,7 @@ export const Dashboard = () => {
                             </IconButton>
                         </Box>
                     </Box>
-                    <Box height="250px" m="-20px 0 0 0"  display={"flex"} justifyContent={"center"} alignItems={"center"}>
+                    <Box height="250px" m="-20px 0 0 0"  display={"flex"} justifyContent={"center"}>
                         {!isMobile && <LineChart isDashboard={true} />}
                         {isMobile && <Typography m={"0 auto"} variant="h5" fontWeight="600" color={colors.black[100]} sx={{ padding: '1rem' }}>line Chart available in larger devices</Typography>}
                     </Box>
