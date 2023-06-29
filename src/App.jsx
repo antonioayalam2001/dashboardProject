@@ -10,6 +10,10 @@ import {Invoices} from "./pages/invoices/Invoices.jsx";
 import {Form} from "./pages/form/Form.jsx";
 import {Calendar} from "./pages/calendar/Calendar.jsx";
 import {FAQ} from "./pages/faq/FAQ.jsx";
+import { Bar } from "./pages/bar/index.jsx";
+import { Pie } from "./pages/pie/index.jsx";
+import { Line } from "./pages/line/index.jsx";
+import { Geo } from "./pages/geo/index.jsx";
 
 function App() {
     const [theme, colorMode] = useMode();
@@ -30,10 +34,10 @@ function App() {
                                 <Route path={'/invoices'} element={<Invoices/>}/>
                                 <Route path={'/calendar'} element={<Calendar/>}/>
                                 <Route path={'/faq'} element={<FAQ/>}/>
-                                <Route path={'/bar'} element={<Dashboard/>}/>
-                                <Route path={'/pie'} element={<Dashboard/>}/>
-                                <Route path={'/line'} element={<Dashboard/>}/>
-                                <Route path={'/geography'} element={<Dashboard/>}/>
+                                <Route path={'/bar'} element={<Bar/>}/>
+                                <Route path={'/pie'} element={<Pie/>}/>
+                                <Route path={'/line'} element={<Line/>}/>
+                                <Route path={'/geography'} element={<Geo/>}/>
                             </Routes>
                         </main>
                     </div>

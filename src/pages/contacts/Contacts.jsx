@@ -19,12 +19,17 @@ export const Contacts = () => {
         {field: "zipCode", headerName: "ZIP", flex: 0},
     ]
     return (
-        <Box p={'1rem'} m={'20px'}>
+        <Box p={'3rem'} m={'20px'}>
             <Header title={'Contacts'} subtitle={'Contacts List'}/>
             <Box m={'40px 0 0 0'} height={'65vh'} sx={{
                 '& .MuiDataGrid-root': {border: 'none'},
-                '& .MuiDataGrid-footerContainer': {backgroundColor: colors.secondary[200], textAlign: 'center'},
-                '& .MuiDataGrid-toolbarContainer .MuiButton-text': {color: 'white', textAlign: 'center', padding: '1rem'},
+                '& .MuiDataGrid-footerContainer': {
+                    backgroundColor: colors.primary[400], textAlign: 'center',
+                    '& .MuiTablePagination-root .MuiTablePagination-toolbar p': {textAlign: 'center', fontWeight: 'bolder', fontSize: '0.8rem',color: colors.black[400]}
+                },
+                '& .MuiDataGrid-toolbarContainer .MuiButton-text': {
+                    color: colors.black[300], textAlign: 'center', padding: '1rem',
+                },
             }}>
                 <DataGrid columns={columns} rows={mockDataContacts} components={{Toolbar: CustomToolbarMUI}} sx={{
                     width: 'auto',
@@ -37,9 +42,10 @@ export const Contacts = () => {
                         '& .MuiDataGrid-cell': {minWidth: '100px !important', },
                         '& .MuiDataGrid-columnHeader': {minWidth: '100px !important',maxWidth: '100px !important'},
                     },
-                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.secondary[200], textAlign: 'center'},
+                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.primary[400], textAlign: 'center'},
                     '& .MuiDataGrid-columnHeaderTitleContainer': {
                         justifyContent: 'center',
+                        '& .MuiDataGrid-columnHeaderTitle': {textAlign: 'center', fontWeight: 'bold', fontSize: '0.8rem',color: colors.black[400]}
                     },
                     '& .MuiDataGrid-cell': {borderBottom: 'none', minWidth: 'fit-content'},
                     '& .age-column': {justifyContent: 'center', flexShrink: 10},

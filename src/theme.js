@@ -1,6 +1,6 @@
 //color design tokens
-import {createContext, useMemo, useState} from "react";
-import {createTheme} from "@mui/material";
+import { createTheme } from "@mui/material";
+import { createContext, useMemo, useState } from "react";
 
 export const tokens = (mode) => ({
     ...(mode === 'dark'
@@ -17,38 +17,38 @@ export const tokens = (mode) => ({
                     900: "#060606"
                 },
                 primary: {
-                    100: "#fecdf5",
-                    200: "#fc9beb",
-                    300: "#fb6ae0",
-                    400: "#f938d6",
-                    500: "#f806cc",
-                    600: "#c605a3",
-                    700: "#95047a",
-                    800: "#630252",
-                    900: "#320129"
+                    100: "#ffe066",
+                    200: "#ffd942",
+                    300: "#ffd21e",
+                    400: "#f9c700",
+                    500: "#d6ab00",
+                    600: "#b28e00",
+                    700: "#8e7200",
+                    800: "#6b5500",
+                    900: "#473900"
                 },
                 secondary: {
-                    100: "#eecfe4",
-                    200: "#dd9fc9",
-                    300: "#cb70af",
-                    400: "#ba4094",
-                    500: "#a91079",
-                    600: "#870d61",
-                    700: "#650a49",
-                    800: "#440630",
-                    900: "#220318"
+                    100: "#d2d2d2",
+                    200: "#a4a4a4",
+                    300: "#777777",
+                    400: "#d6ab00",
+                    500: "#1c1c1c",
+                    600: "#161616",
+                    700: "#111111",
+                    800: "#0b0b0b",
+                    900: "#060606"
                 },
 
-                pinkAccent: {
-                    100: "#edf4f4",
-                    200: "#dbe9ea",
-                    300: "#c9dfdf",
-                    400: "#b7d4d5",
-                    500: "#a5c9ca",
-                    600: "#84a1a2",
-                    700: "#637979",
-                    800: "#425051",
-                    900: "#212828"
+                accentColor: {
+                    100: "#66e5ff",
+                    200: "#42dfff",
+                    300: "#1ed8ff",
+                    400: "#00cff9",
+                    500: "#00b1d6",
+                    600: "#0094b2",
+                    700: "#00768e",
+                    800: "#00586b",
+                    900: "#003b47"
                 },
 
                 white: {
@@ -62,43 +62,56 @@ export const tokens = (mode) => ({
                     800: "#606060",
                     900: "#303030"
                 },
-            } :
+        } :
+            // LightTheme
             {
                 black: {
                     100: "#e0e0e0",
                     200: "#c2c2c2",
-                    300: "#a3a3a3",
-                    400: "#858585",
-                    500: "#666666",
+                    // Opcion del sidebar activa
+                    300: "#c994d0",
+                    //Texto header y footer de tablas
+                    400: "#45204a",
+                    // Utilizamos para fondos
+                    500: "#FDC3C6",
                     600: "#525252",
-                    700: "#3d3d3d",
+                    //Fondos de tarjetas deñ dashboard
+                    700: "#5d2b63",
                     800: "#292929",
                     900: "#141414",
                 },
-                primary: {
-                    100: "#fdf4fb",
-                    200: "#fbe8f7",
-                    300: "#faddf2",
-                    400: "#f8d1ee",
-                    500: "#f6c6ea",
-                    600: "#c59ebb",
+            primary: {
+                    // Hover boton de eqquipos
+                    100: "#864392",
+                200: "#fbe8f7",
+                    //Color label de grafica de pie
+                300: "#2e1531",
+                    //Background header y footer de tablas
+                400: "#bd7bc5",
+                    //Fondo de la nota
+                    500: "#432149",
+                    600: "#74367c",
                     700: "#94778c",
-                    800: "#624f5e",
+                    //Fondo boton de Team
+                    800: "#45204a",
                     900: "#31282f"
                 },
                 secondary: {
                     100: "#282c2e",
-                    200: "#4f585b",
+                    //Fondo boton de Team
+                    200: "#592c61",
                     300: "#778489",
-                    400: "#9eb0b6",
-                    500: "#c6dce4",
+                    //Color de las leyendas de las graficas
+                    400: "#c994d0",
+                    //izquierda de calendario fondo
+                    500: "#ed779e",
                     600: "#d1e3e9",
                     700: "#ddeaef",
                     800: "#e8f1f4",
                     900: "#f4f8fa",
                 },
 
-                pinkAccent: {
+                accentColor: {
                     100: "#fcf6f6",
                     200: "#faeded",
                     300: "#f7e3e3",
@@ -152,7 +165,7 @@ export const themeSettings = (mode) => {
                             light: colors.black[100],
                         },
                         background: {
-                            default: "rgba(250,210,225,0.8)"
+                            default: "#FEDFE2"
                         }
                     }
             )

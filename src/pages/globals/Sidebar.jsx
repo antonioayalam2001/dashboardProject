@@ -30,15 +30,15 @@ export const Sidebar = () => {
                     padding: ` 0.2rem 2rem 0.2rem 1.2rem !important`
                 },
                 "& .pro-inner-item:hover": {
-                    color: ` ${colors.primary[900]} !important`,
-                    // background: ` ${colors.pinkAccent[700]} !important`
+                    color: ` ${colors.primary[400]} !important`,
+                    // background: ` ${colors.accentColor[700]} !important`
                 },
                 "& .pro-menu-item.active": {
-                    color: ` ${colors.white[300]} !important`
+                    color: ` ${colors.black[300]} !important`
                 },
                 // display:'none'
             }}>
-            <ProSidebar collapsed={isCollapsed} width={"300px"} collapsedWidth={'60px'}>
+            <ProSidebar collapsed={isCollapsed} width={"300px"} collapsedWidth={'60px'} >
                 <Menu iconShape="square">
                     {/* LOGO AND MENU ICON */}
                     <MenuItem
@@ -53,7 +53,7 @@ export const Sidebar = () => {
                             <Box display={'flex'}
                                  width={"100%"}
                                  justifyContent={'space-between'}
-                                 alignItems={'center'}
+                                alignItems={'center'}
                             >
                                 <Typography variant={'h4'} color={theme === 'dark' ? colors.black[100] : colors.black[700]} fontWeight={'bolder'}>Personal Dashboard</Typography>
                                 <IconButton onClick={() => {
@@ -92,7 +92,7 @@ export const Sidebar = () => {
                     }
 
                     {/*    Menu Items*/}
-                    <Box pl={isCollapsed ? undefined : "10%"}>
+                    <Box pl={isCollapsed ? undefined : "10%"}  >
                         {
                             navBarLinks.map(({title, to, icon}, index) => (
                                     <NavBarOption key={title} title={title} to={to} selected={selected} setSelected={setSelected} icon={icon} index={index} isCollapsed={isCollapsed}/>

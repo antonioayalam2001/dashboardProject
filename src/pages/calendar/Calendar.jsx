@@ -42,24 +42,27 @@ export const Calendar = () => {
     }
 
     return (
-        <Box p={4}>
+        <Box p={"4rem"}>
             <Header title={"Full control of your events"} subtitle={'Start organizing all your times'}></Header>
-            <Box display={'flex'}>
-
-                {/*    Calendar left side*/}
-                <Box flex={'1 1 20%'} bgcolor={colors.secondary[700]} borderRadius={'4px'} p={'15px'}>
-                    <Typography variant={'h5'}>Events</Typography>
+            {/*    Calendar left side*/}
+            <Box display={'flex'} height={"70vh"}>
+                <Box flex={'1 1 20%'} bgcolor={colors.secondary[500]} borderRadius={'4px'} p={'15px'}>
+                    <Typography variant={'h3'} fontWeight={800}>Events</Typography>
                     {currentEvents?.map((event) => (
-                        <ListItem key={event.id} sx={{backgroundColor: colors.secondary[100], margin: '10px 0', borderRadius: '2px'}}>
-                            <ListItemText primary={event.title} secondary={
+                        <ListItem key={event.id} sx={{backgroundColor: colors.primary[500], margin: '10px 0', borderRadius: '2px'}}>
+                            <ListItemText  sx={{color: colors.white[400]}} primary={event.title} secondary={
                                 <Typography>{formatDate(event.start, {year: 'numeric', month: 'short', day: 'numeric'})}</Typography>
                             }/>
                         </ListItem>
                     ))}
                 </Box>
                 {/*    Calendar Right side*/}
-                <Box flex={'1 1 80%'}>
-                    <FullCalendar plugins={[
+                <Box flex={'1 1 80%'} height={"70vh"} sx={{
+                    ".fc .fc-daygrid-day-number": {color: colors.primary[400], fontWeight: 'bold'},
+                }}>
+                    <FullCalendar
+                        height={"100%"}
+                        plugins={[
                         dayGridPlugin,
                         timeGridPlugin,
                         interactionPlugin,

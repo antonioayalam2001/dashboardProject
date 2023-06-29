@@ -32,7 +32,7 @@ export const Form = () => {
     });
 
     return (
-        <Box p={'1rem'} m={'20px'} sx={{
+        <Box p={'3rem'} m={'20px'} sx={{
             // Background con media query
             // backgroundColor: {
             //     xs: 'pink',

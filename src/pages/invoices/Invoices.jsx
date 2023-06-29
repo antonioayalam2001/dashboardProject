@@ -1,9 +1,9 @@
-import {Header} from "../../components/Header.jsx";
-import {DataGrid} from "@mui/x-data-grid";
-import {CustomToolbarMUI} from "../../components/CustomToolbarMUI.jsx";
-import {getColors} from "../../helpers/getColors.js";
-import {Box, Typography} from "@mui/material";
-import {mockDataInvoices,} from "../../data/mockData.js";
+import { Box, Typography } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import { CustomToolbarMUI } from "../../components/CustomToolbarMUI.jsx";
+import { Header } from "../../components/Header.jsx";
+import { mockDataInvoices, } from "../../data/mockData.js";
+import { getColors } from "../../helpers/getColors.js";
 
 export const Invoices = () => {
     const colors = getColors();
@@ -16,7 +16,7 @@ export const Invoices = () => {
 
             renderCell: (params) => {
                 const value = params.row.cost;
-                const colorStyle = value>50 ? colors.pinkAccent[700] : colors.secondary[200]
+                const colorStyle = value>50 ? colors.accentColor[400] : colors.secondary[100]
                 return <Typography fontWeight={'bold'} color = {colorStyle}>{value}</Typography>
             }
         },
@@ -25,13 +25,18 @@ export const Invoices = () => {
     ]
 
     return (
-        <Box p={'1rem'} m={'20px'}>
+        <Box p={'3rem'} m={'20px'}>
             <Header title={'TEAM BOARD'} subtitle={'Manage the whole team in just one place'}/>
             <Box m={'40px 0 0 0'} height={'65vh'} sx={{
                 '& .MuiDataGrid-root': {border: 'none'},
-                '& .MuiDataGrid-footerContainer': {backgroundColor: colors.secondary[200], textAlign: 'center'},
+                '& .MuiDataGrid-footerContainer': {
+                    backgroundColor: colors.primary[400], textAlign: 'center',
+                    '& .MuiTablePagination-root .MuiTablePagination-toolbar p': {textAlign: 'center', fontWeight: 'bolder', fontSize: '0.8rem',color: colors.black[400]}
+                },
                 '& .MuiDataGrid-toolbarContainer .MuiButton-text': {color: 'white', textAlign: 'center', padding: '1rem'},
-                '& .MuiCheckBox-root': {color: 'white', textAlign: 'center', padding: '1rem'},
+                '& .MuiDataGrid-toolbarContainer .MuiButton-text': {
+                    color: colors.black[300], textAlign: 'center', padding: '1rem',
+                },
 
             }}>
                 <DataGrid checkboxSelection={true} columns={columns} rows={mockDataInvoices} components={{Toolbar: CustomToolbarMUI}} sx={{
@@ -41,10 +46,10 @@ export const Invoices = () => {
                         },
                         '& .MuiDataGrid-columnHeader': {color: colors.white[200], textAlign: 'center', fontWeight: 'bolder'}
                     },
-                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.secondary[200], textAlign: 'center'},
+                    '& .MuiDataGrid-columnHeader': {backgroundColor: colors.primary[400], textAlign: 'center'},
                     '& .MuiDataGrid-columnHeaderTitleContainer': {
                         justifyContent: 'center',
-                        '& .MuiDataGrid-columnHeaderTitle': {textAlign: 'center', fontWeight: 'bold', fontSize: '0.8rem'}
+                        '& .MuiDataGrid-columnHeaderTitle': {textAlign: 'center', fontWeight: 'bold', fontSize: '0.8rem',color: colors.black[400]}
                     },
                     '& .MuiDataGrid-cell': {justifyContent: 'center', borderBottom: 'none'},
                 }}/>
